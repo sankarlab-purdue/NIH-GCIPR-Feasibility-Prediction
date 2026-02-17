@@ -74,7 +74,7 @@ def remove_from_excluded(smiles: str, db: sqlite3.Cursor):
     remove_smiles(smiles, db, 'excluded')
 
 # Function to sample buyables database
-def sample_buyables(sample_size: int, output_file: str=None, buyables_db_path: str='data/split.db', table_name: str='buyable'):
+def sample_buyables(sample_size: int, output_file: str=None, buyables_db_path: str='../data/split.db', table_name: str='buyable'):
     buyables_conn = sqlite3.connect(buyables_db_path)
     buyables_db = buyables_conn.cursor()
 
