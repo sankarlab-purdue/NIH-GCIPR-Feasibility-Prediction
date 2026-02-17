@@ -1,0 +1,7 @@
+numpy
+pandas
+rdkit
+rdchiral
+matplotlib
+tqdm
+ipykernel

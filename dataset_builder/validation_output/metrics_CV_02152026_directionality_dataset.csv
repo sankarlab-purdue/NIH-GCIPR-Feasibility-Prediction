@@ -1,0 +1,11 @@
+Metric,Score
+Top-1 Accuracy TEMP (%),92.8495331202607
+Total Template App Failure,123.0
+Total True Positive (excl. Temp Failures),8435.0
+Total True Negative (excl. Temp Failures),6381.0
+Total False Positive (excl. Temp Failures),609.0
+Total False Negative (excl. Temp Failures),532.0
+Total Queries without Temp Application Failure,15957.0
+Precision,93.26625386996903
+Recall,94.06713505074161
+Total Entries in Dataset used,16080.0
