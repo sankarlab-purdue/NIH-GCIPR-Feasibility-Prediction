@@ -114,7 +114,7 @@ class FeasibilityAnalyzer:
                 print(f"\nCandidate {i+1}: Applying template to {c_smi}\nFeasibility marker: {c_feas}")
             
             try:
-                temp_app = reaction_chemistry_checker(query_template, c_smi, debug=debug)
+                temp_app, method = reaction_chemistry_checker(query_template, c_smi, debug=debug)
                 if debug:
                     print(f"Template applied?: {temp_app}")
                 
@@ -150,9 +150,9 @@ class FeasibilityAnalyzer:
         
         return result
     
-    def feasibility_predictor(self, query_smi, temp_app=True, top_n=1, debug=False):
+    def feasibility_predictor(self, query_smi, top_n=1, debug=False):
 
-        query_can = canonicalize_smiles(query_smi)
+        query_can = canonicalize_reaction(query_smi)
         query_rxn_fp, query_prod_fp = compute_reaction_fp(query_can)
         if query_rxn_fp is None and query_prod_fp is None:
             if debug:
@@ -185,7 +185,7 @@ class FeasibilityAnalyzer:
         for item in result:
             if item[0] == 'RHEA':
                 proposed_rxn = add_missing_components(rhea_id=item[1], precursors=item[3].split('.'), target=smiles, debug=debug)
-                feas = self.feasibility_predictor(proposed_rxn, temp_app=True, top_n=1, debug=debug)
+                feas = self.feasibility_predictor(proposed_rxn, top_n=1, debug=debug)
                 if feas == 'Yes':
                     feas_rxn.append(item)
                 elif feas == "Unknown":
