@@ -218,7 +218,7 @@ class FeasibilityAnalyzer:
                     print(f"  Added missing components: {proposed}")
 
                 # Get feasibility prediction
-                feas_result = self.feasibility_predictor(proposed, temp_app=True, top_n=1, debug=debug)
+                feas_result = self.feasibility_predictor(proposed, top_n=1, debug=debug)
 
                 if debug:
                     print(f"  feasibility: {feas_result}")
@@ -491,7 +491,7 @@ def display_pathway_step(step, step_num, total_steps, root_smiles, is_unfeasible
     _id = step['reaction_name']
 
     if step['source'] == 'RHEA':
-        print(f"https://www.rhea-db.org/rhea/{int(_id)}")
+        print(f"https://www.rhea-db.org/rhea/{int(_id[:-2] if '-' in _id else _id)}")
         full_rxn = add_missing_components(rhea_id=_id, precursors=prec, target=target, debug=False)
 
     else:
