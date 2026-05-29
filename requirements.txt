@@ -5,3 +5,4 @@ rdchiral
 matplotlib
 tqdm
 ipykernel
+rxnmapper
