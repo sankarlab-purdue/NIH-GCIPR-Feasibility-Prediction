@@ -10,7 +10,7 @@ from nodes import ChemNode
 from typing import List
 from rdkit import Chem
 from rdkit.Chem import AllChem
-from rdkit.Chem import Draw
+from rdkit.Chem.Draw import rdMolDraw2D
 from IPython.display import Image
 from PIL import Image, ImageDraw, ImageFont
 
@@ -287,7 +287,7 @@ def draw_individual_molecule(mol, highlight_atoms, atom_colors, mol_size):
         scale_factor = 0.9 # large mol, minimal zoom
     
     # Draw at larger size then scale down (effectively zooms in on molecule)
-    draw_options = Draw.DrawingOptions()
+    draw_options = rdMolDraw2D.MolDrawOptions()
     draw_options.padding = 0.05
     
     temp_size = (int(mol_size[0] / scale_factor), int(mol_size[1] / scale_factor))
