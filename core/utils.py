@@ -225,26 +225,12 @@ class Retrosim:
                     smarts[precursors] = current_smarts
 
                     if precursors in probs:
-                        probs[precursors] = max(probs[precursors], overall_score)
+                        if overall_score > probs[precursors]:
+                            precursors_sim = overall_score
+                            rhea_id[precursors] = current_rhea_id
                     else:
                         probs[precursors] = overall_score
                         rhea_id[precursors] = current_rhea_id
-
-                
-            # Process outcomes
-            #for precursors in outcomes:
-            #    precursors_fp = self.calculate_fingerprint(precursors)
-            #    precursors_sim = DataStructs.BulkDiceSimilarity(precursors_fp, [rcts_ref_fp])[0]
-
-                #overall_score = precursors_sim * sims[j]
-                #smarts[precursors] = self.reference_data.at[jx, 'reaction_smarts']
-
-                # If this precursor structure was already found through a different template/reaction
-                #if precursors in probs:
-                #    probs[precursors] = max(probs[precursors], overall_score)
-                #else:
-                #    probs[precursors] = overall_score
-                #    rhea_id[precursors] = current_rhea_id
 
                 if debug and ji < 5:
                     print(f"Found precursor: {precursors}")
