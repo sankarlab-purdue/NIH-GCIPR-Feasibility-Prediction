@@ -1,6 +1,8 @@
 # NIH-GCIPR-Feasibility-Prediction
 
-Retrosynthesis planning tools coupled with Feasibility Analyzer, as described in "Enzymatic reaction directional feasibility prediction for computer-aided synthesis planning."
+Enzyme reaction feasibility prediction is essential for the realization of computer aided synthesis planning and automated biocatalytic process scouting. Based on this, we developed a chemical similarity-based algorithm to predict the feasibility of any proposed enzymatic reaction. This algorithm works by classifying a query reaction's feasibility by identifying similar transformations in a knowledgebase comprising of expertly curated, high-quality annotations of enzymatic reactions and their directionality.
+
+This publication contains data used for Retrosynthesis planning tools coupled with Feasibility Analyzer, as described in ["Enzymatic reaction directional feasibility prediction for computer-aided synthesis planning."](https://chemrxiv.org/doi/full/10.26434/chemrxiv.15004524/v1) 
 
 ---
 
@@ -25,7 +27,7 @@ Retrosynthesis planning tools coupled with Feasibility Analyzer, as described in
 Both planners require datasets located in the *data* folder. These datasets are described below. The links to these are already on the notebooks used for the planners, so all you need to do is load the cell before running the analysis. 
 
 - **rdenzyme_db.pkl, retrobiocat_db.pkl:** Templates for RDEnzyme and RetroBioCat reactions
-- **buyables.db:** List of commercially available compounds (due to GitHub size limit, please download the database here: [https://purr.purdue.edu/projects/acsfeasiblesynthesis/files](https://purr.purdue.edu/publications/5155/1)) As of now, the repository has a sampled version of this database.
+- **buyables.db:** List of commercially available compounds (due to GitHub size limit, please download the database from [Purdue University Research Repository (PURR)](https://purr.purdue.edu/publications/5155/1)) As of now, the repository has a sampled version of this database.
 - **custom.db:** User-defined compounds to treat as buyable (editable in data > change_endpoints)
 - **excluded.db:** Commercially available compounds that user defined as "Not Buyable" (editable in data > change_endpoints)
 
