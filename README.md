@@ -20,6 +20,8 @@ This publication contains data used for Retrosynthesis planning tools coupled wi
     - **Single-step planning**: single_step_planner > UseSingleStepPlanner
     - **Multi-step planning**: multi_step_planner > UseMultiStepPlanner
 
+Both planners were executed with python version 3.14.4. Versions of selected packages are as follows: ipykernel 7.2.0, ipython 9.13.0, numpy 2.4.4, pandas 3.0.2, rdchiral 1.1.0, rdkit 2026.3.1, rxnmapper 0.4.3, transformers 4.57.6.
+
 ---
 
 ## **Important considerations**:
